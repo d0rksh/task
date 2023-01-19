@@ -3,9 +3,9 @@ var db = null;
 
 const createDB = ()=>{
     return mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        database: 'task'
+        host: '',
+        user: '',
+        database: ''
       }
   )
 }
