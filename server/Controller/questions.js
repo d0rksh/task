@@ -28,7 +28,7 @@ const createQuestion = async (req,res)=>{
 const getQuestions = async (req,res)=>{
     const query = `SELECT *,(SELECT
         answers.my_answer
-        from answers WHERE answers.question_id = questions.id) as status FROM questions;`
+        from answers WHERE answers.question_id = questions.id AND answers.user_id = ?) as status FROM questions;`
     const [row,_] = await getDB().query(query)
     const output = []
     row.forEach(element=>{
